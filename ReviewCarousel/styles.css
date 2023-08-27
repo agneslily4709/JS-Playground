@@ -21,3 +21,41 @@ body{
     justify-content: center;
     align-items: center;
 }
+.content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+#review{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 30px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border: 2px solid crimson;
+}
+#profile{
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+}
+.supriseButton{
+    margin: 30px 0px;
+    width: 100%;
+    padding: 10px;
+    background-color: navy;
+    color: aliceblue;
+    font-size: 20px;
+    cursor: pointer;
+}
+.supriseButton:hover{
+    background-color: aliceblue;
+    color: navy;
+}
+.star{
+    font-size: 35px;
+    color: green;
+}
