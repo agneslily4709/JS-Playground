@@ -8,23 +8,31 @@
 </head>
 <body>
     <nav class="brand">ReviewCarousel</nav>
-    <div id="content">
-        <div id="review">
-            <h2 id="review-author">John Doe</h2>
-            <img id="profile" src="https://randomuser.me/api/portraits/med/men/3.jpg"/>
-            <p id="review-date">2023-08-25</p>
-            <p id="review-comment">Excellent product! It exceeded my expectations.</p>
-            <div id="review-rating">
-                <span id="one">&star;</span>
-                <span id="two">&star;</span>
-                <span id="three">&star;</span>
-                <span id="four">&star;</span>
-                <span id="five">&star;</span>
-
+    <div class="display">
+        <div id="content">
+            <div class="review-box" id="review">
+                <h1 id="review-id">1</h1>
+                <h2 id="review-author">John Doe</h2>
+                <img id="profile" src="https://randomuser.me/api/portraits/med/men/3.jpg"/>
+                <p id="review-date">2023-08-25</p>
+                <p id="review-comment">Excellent product! It exceeded my expectations.</p>
+                <div id="review-rating">
+                    <span class="star" id="1">&star;</span>
+                    <span class="star" id="2">&star;</span>
+                    <span class="star" id="3">&star;</span>
+                    <span class="star" id="4">&star;</span>
+                    <span class="star" id="5">&star;</span>
+                </div>
             </div>
+            
+        </div>
+        <div class="buttons">
+            <button id="prevButton" class="supriseButton">Previous</button>
+            <button id="supriseButton" class="supriseButton">Surprise me</button>
+            <button id="nextButton" class="supriseButton">Next</button>
         </div>
     </div>
-    <button id="supriseButton" class="supriseButton">Surprise me</button>
+
     <script src="script.js"></script>
 </body>
 </html>

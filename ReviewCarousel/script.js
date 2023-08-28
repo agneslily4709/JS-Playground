@@ -1,11 +1,10 @@
 const content = document.getElementById("content")
-content.className = "content"
 const response = [
       {
         "id": 1,
         "author": "John Doe",
         "rating": 1,
-        "picture":"https://randomuser.me/api/portraits/med/men/3.jpg",
+        "picture":"https://randomuser.me/api/portraits/men/3.jpg",
         "comment": "Excellent product! It exceeded my expectations.",
         "date": "2023-08-25"
       },
@@ -13,7 +12,7 @@ const response = [
         "id": 2,
         "author": "Jane Smith",
         "rating": 4,
-        "picture":"https://randomuser.me/api/portraits/med/men/1.jpg",
+        "picture":"https://randomuser.me/api/portraits/men/1.jpg",
         "comment": "Good quality and fast shipping, but the price is a bit high.",
         "date": "2023-08-24"
       },
@@ -21,7 +20,7 @@ const response = [
         "id": 3,
         "author": "David Johnson",
         "rating": 5,
-        "picture":"https://randomuser.me/api/portraits/med/men/4.jpg",
+        "picture":"https://randomuser.me/api/portraits/men/4.jpg",
         "comment": "I love this product. It's worth every penny.",
         "date": "2023-08-23"
       },
@@ -29,7 +28,7 @@ const response = [
         "id": 4,
         "author": "Trevor Wilson",
         "rating": 3,
-        "picture":"https://randomuser.me/api/portraits/med/men/5.jpg",
+        "picture":"https://randomuser.me/api/portraits/men/5.jpg",
         "comment": "The product is okay, but it could use some improvements.",
         "date": "2023-08-22"
       },
@@ -37,7 +36,7 @@ const response = [
         "id": 5,
         "author": "Michael Brown",
         "rating": 4,
-        "picture":"https://randomuser.me/api/portraits/med/men/6.jpg",
+        "picture":"https://randomuser.me/api/portraits/men/6.jpg",
         "comment": "Great customer service, but the delivery took longer than expected.",
         "date": "2023-08-21"
       },
@@ -45,7 +44,7 @@ const response = [
         "id": 6,
         "author": "Stanley Anderson",
         "rating": 5,
-        "picture":"https://randomuser.me/api/portraits/med/men/7.jpg",
+        "picture":"https://randomuser.me/api/portraits/men/7.jpg",
         "comment": "Amazing product! I couldn't be happier with my purchase.",
         "date": "2023-08-20"
       },
@@ -53,7 +52,7 @@ const response = [
         "id": 7,
         "author": "Matthew Davis",
         "rating": 4,
-        "picture":"https://randomuser.me/api/portraits/med/men/8.jpg",
+        "picture":"https://randomuser.me/api/portraits/men/8.jpg",
         "comment": "Overall, a good experience. The product is solid.",
         "date": "2023-08-19"
       },
@@ -61,7 +60,7 @@ const response = [
         "id": 8,
         "author": "Mark Thompson",
         "rating": 3,
-        "picture":"https://randomuser.me/api/portraits/med/men/9.jpg",
+        "picture":"https://randomuser.me/api/portraits/men/9.jpg",
         "comment": "Decent product, but it arrived with some minor scratches.",
         "date": "2023-08-18"
       },
@@ -69,7 +68,7 @@ const response = [
         "id": 9,
         "author": "Adam White",
         "rating": 5,
-        "picture":"https://randomuser.me/api/portraits/med/men/10.jpg",
+        "picture":"https://randomuser.me/api/portraits/men/10.jpg",
         "comment": "I can't believe how well this product works. Highly recommended!",
         "date": "2023-08-17"
       },
@@ -77,35 +76,61 @@ const response = [
         "id": 10,
         "author": "Chris Taylor",
         "rating": 4,
-        "picture":"https://randomuser.me/api/portraits/med/men/11.jpg",
+        "picture":"https://randomuser.me/api/portraits/men/11.jpg",
         "comment": "Good value for the money. It does what it's supposed to do.",
         "date": "2023-08-16"
       }
     ]
+const loadPage = (review) => {
+  const reviewAuthor = document.getElementById("review-author")
+    reviewAuthor.textContent = review.author
+    const reviewPicture = document.getElementById("profile")
+    reviewPicture.src = review.picture
+    const reviewDate = document.getElementById("review-date")
+    reviewDate.textContent = review.date
+    const reviewComment = document.getElementById("review-comment")
+    reviewComment.textContent = review.comment
+    const reviewId = document.getElementById("review-id")
+    reviewId.textContent = review.id
+    for (let i=1;i<=5;i++){
+      const reviewStar = document.getElementById(`${i}`)
+      if(review.rating>=i){
+        reviewStar.innerHTML = "&starf;"
+      }
+      else{
+        reviewStar.innerHTML = "&star;"
+      }
+    }
+}
 
 const randomReview = ()=>{
     const randomNum = Math.floor(Math.random() * 10) + 1;
-    const review = response[randomNum]
-    reviewElement = renderPage(review)
-    content.append(reviewElement)
+    const review = response[randomNum-1]
+    loadPage(review)
+}
+const previousReview = () => {
+  console.log("prev")
+  const reviewElement = document.getElementById("review-id")
+  if(reviewElement.innerText >1){
+    const newIndex = parseInt(reviewElement.innerText) - 1;
+    loadPage(response[newIndex-1])
+    reviewElement.innerText = newIndex;
+  }
 }
 
-const renderPage = (review,reviewElement) => {
-    const reviewElement = document.getElementById("review")
-    const reviewAuthor = document.getElementById("review-author")
-    reviewAuthor.textContent = review.author
-    const reviewPicture = document.getElementById("profile")
-    const reviewDate = document.getElementById("review-date")
-    const reviewComment = document.getElementById("review-comment")
-    const reviewRating = document.getElementById("review-rating")
-
-    return reviewElement
+const nextReview = () => {
+  const reviewElement = document.getElementById("review-id")
+  if(reviewElement.innerText<10){
+    const newIndex = parseInt(reviewElement.innerText) + 1;
+    loadPage(response[newIndex - 1]);
+    reviewElement.innerText = newIndex;
+  }
 }
-
 const supriseButton = document.getElementById("supriseButton")
 supriseButton.addEventListener("click",randomReview)
 
-renderPage(response[0],reviewElement)
-// content.appendChild(reviewElement)
+const prevButton = document.getElementById("prevButton")
+prevButton.addEventListener("click",previousReview)
 
-document.body.appendChild(content)
+const nextButton = document.getElementById("nextButton")
+nextButton.addEventListener("click",nextReview)

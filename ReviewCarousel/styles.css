@@ -21,21 +21,25 @@ body{
     justify-content: center;
     align-items: center;
 }
-.content{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+.display{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-#review{
+#content{
+    margin: 50px 50px;
+}
+.review-box{
+    width:500px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 0.8rem;
     padding: 30px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    border: 2px solid crimson;
+    border: 2px solid navy;
+    border-radius: 20px;
 }
 #profile{
     width: 200px;
@@ -43,8 +47,7 @@ body{
     border-radius: 20px;
 }
 .supriseButton{
-    margin: 30px 0px;
-    width: 100%;
+    width: 150px;
     padding: 10px;
     background-color: navy;
     color: aliceblue;
@@ -58,4 +61,9 @@ body{
 .star{
     font-size: 35px;
     color: green;
+}
+.buttons{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 40px;
 }
