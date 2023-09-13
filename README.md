@@ -7,3 +7,4 @@
 5. Model Popup
 6. FAQ page
 7. Video Project
+8. Tab Switch
