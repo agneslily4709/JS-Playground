@@ -1,19 +1,23 @@
 const content = {
-        historyBtn: "Content for History tab",
-        visionBtn: "Content for Vision tab",
-        goalsBtn: "Content for Goals tab"
-    };
+        visionBtn:"Content:Vision",
+        historyBtn:"Content:History",
+        goalsBtn:"Content:Goals"
+}
 
-    const tabContent = document.getElementById("tab");
-    const buttons = document.querySelectorAll(".btn");
+var tabContent = document.getElementById("tab")
+tabContent.textContent = content["historyBtn"]
 
-    buttons.forEach(button => {
-        button.addEventListener("click", function () {
-            buttons.forEach(btn => btn.classList.remove("active"));
-            this.classList.add("active");
-            const contentText = content[this.id];
-            tabContent.textContent = contentText;
-        });
-    });
+var historyBtn = document.getElementById("historyBtn")
+historyBtn.addEventListener("click",function(){
+        tabContent.textContent = content["historyBtn"]
+})
 
-    document.getElementById("historyBtn").click();
+var goalsBtn = document.getElementById("goalsBtn")
+goalsBtn.addEventListener("click",function(){
+        tabContent.textContent = content["goalsBtn"]
+})
+
+var visionBtn = document.getElementById("visionBtn")
+visionBtn.addEventListener("click",function(){
+        tabContent.textContent = content["visionBtn"]
+})
