@@ -11,10 +11,12 @@
                 <h1>Iprem Losum</h1>
         </nav>
         <div class="home">
-                <form onsubmit="">
-                        <input type="number" name="number" value="" placeholder="Enter the number of sentences to be generated.."/>
-                        <button type="submit">Generate</button>
+                <form id="form" class="formContainer" oninput="result.value = parseInt(number.value)">
+                        <input type="range" id="input" name="number" min="0" max="15">
+                        <output class="output" name="result" for="number" id="formInput"></output>
+                        <button class="submitButton" type="submit">Generate</button>
                 </form>
+                <div id="IpremLosum" class="content"></div>
         </div>
         <script src="script.js"></script>
 </body>
