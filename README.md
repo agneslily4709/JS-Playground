@@ -8,3 +8,6 @@
 6. FAQ page
 7. Video Project
 8. Tab Switch
+9. IpremLosum
+10. ImageSlider
+11. GroceryList
