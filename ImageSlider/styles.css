@@ -1,0 +1,18 @@
+*{
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+}
+body{
+        width:100vw;
+        height: 100vh;
+}
+.brand{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color:#66FF66 ;
+        padding: 20px;
+        color: #fb236b;
+}
