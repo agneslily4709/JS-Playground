@@ -65,26 +65,41 @@ const menu = [
 ];
 
 const page = document.getElementById("page")
-menu.forEach((element,index)=>{
-        const elementDiv = document.createElement("div")
-        elementDiv.className = "item"
+function renderPage(category){
+        const filteredMenu = category === "All" ? menu : menu.filter(item => item.category === category);
+        console.log(filteredMenu)
+        page.innerHTML = ""
+        filteredMenu.forEach((element,index)=>{
+                const elementDiv = document.createElement("div")
+                elementDiv.className = "item"
+        
+                const elementDetails = document.createElement("div")
+        
+                const elementCover = document.createElement("img")
+                elementCover.src = "./Imgs/"+element.id+".jpg"
+                elementCover.className = "coverImg"
+        
+                const elementName = document.createElement("h3")
+                elementName.textContent = element.name
+        
+                const elementPrice = document.createElement("span")
+                elementPrice.textContent = "Rs. "+element.price
+        
+                const elementDescription = document.createElement("p")
+                elementDescription.textContent = element.description
+        
+                elementDetails.append(elementName,elementPrice,elementDescription)
+                elementDiv.append(elementCover,elementDetails)
+                page.append(elementDiv)
+        })
 
-        const elementDetails = document.createElement("div")
-
-        const elementCover = document.createElement("img")
-        elementCover.src = "./Imgs/"+element.id+".jpg"
-        elementCover.className = "coverImg"
-
-        const elementName = document.createElement("h3")
-        elementName.textContent = element.name
-
-        const elementPrice = document.createElement("span")
-        elementPrice.textContent = "Rs. "+element.price
-
-        const elementDescription = document.createElement("p")
-        elementDescription.textContent = element.description
-
-        elementDetails.append(elementName,elementPrice,elementDescription)
-        elementDiv.append(elementCover,elementDetails)
-        page.append(elementDiv)
-})
+}
+renderPage('All')
+const categoryButtons = document.querySelectorAll(".categoryBtn");
+categoryButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        const selectedCategory = button.getAttribute("data-category");
+        console.log(selectedCategory)
+        renderPage(selectedCategory);
+    });
+});
