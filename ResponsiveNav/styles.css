@@ -56,7 +56,7 @@
                 z-index: 1;
             }
             .menu-toggle.active {
-                transform: rotate(90deg); 
+                transform: rotate(90deg); /* Rotate the icon when active */
             }
             
     .nav-links.show {
