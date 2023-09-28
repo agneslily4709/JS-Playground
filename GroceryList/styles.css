@@ -1,14 +1,14 @@
-*{
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        font-family:Georgia, 'Times New Roman', Times, serif;
-}
-body{
-        width:100vw;
-        height: 100vh;
-        font-size: larger;
-}
+        *{
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                font-family:Georgia, 'Times New Roman', Times, serif;
+        }
+        body{
+                width:100vw;
+                height: 100vh;
+                font-size: larger;
+        }
 .brand{
         display: flex;
         align-items: center;

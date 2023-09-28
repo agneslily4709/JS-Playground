@@ -1,45 +1,93 @@
-*{
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        font-family:Georgia, 'Times New Roman', Times, serif;
+* {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    background-color: #fff;
 }
-body{
-        width:100vw;
-        height: 100vh;
-        font-size: larger;
+body {
+    width: 100vw;
+    height: 100vh;
+    font-size: larger;
 }
-.brand{
-        color: aliceblue;
-        background-color:navy;
-        padding: 15px;
-        font-size: 30px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-.home{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 80vh;
+.brand {
+    color: aliceblue;
+    background-color: navy;
+    padding: 15px;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.content{
-        display: grid;
-        grid-template-columns: auto auto auto;
+.content {
+    display: grid;
+    grid-template-columns: auto auto auto;
 }
-.trigger{
-        border: 2px solid crimson;
-        margin: 20px;
-        padding: 20px;
-        width: 200px;
-        color: black;
-        text-align: center;
-        text-decoration: none;
-        box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+.project-card {
+    border: 3px solid navy;
+    margin: 20px;
+    height: 200px;
+    border-radius: 10px;
+    color: black;
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
-.trigger:hover{
-        background-color: crimson;
-        color: aliceblue;
+.my-button {
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    text-decoration: none;
+    padding: 7px;
+    border-color: #000000;
+    background-color: pink;
+    color: black;
+    border-radius: 5px;
+    margin: 0px 20px;
+}
+.my-button:hover {
+    color: crimson;
+    border: 1px solid crimson;
+}
+.project-name {
+    background-color: rgb(151, 182, 240);
+    color: black;
+    font-size: 25px;
+    text-transform: uppercase;
+}
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: grey;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: navy;
+}
+
+@media screen and (max-device-width: 360px) and (max-device-height: 640px) and (orientation: portrait) {
+        .content {
+                display: grid;
+                grid-template-columns: auto;
+            }
+            .project-card{
+                font-size: 15px;
+            }
+            .project-card {
+                border: 3px solid navy;
+                margin: 20px;
+                height: 200px;
+                border-radius: 10px;
+                color: black;
+                text-align: center;
+                align-items: center;
+                text-decoration: none;
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+            }
 }
